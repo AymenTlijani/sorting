@@ -1,0 +1,18 @@
+ ALGORITHM insert-sort
+
+ Procedure insert_sort(VAR arr: ARRAY_OF INTEGER);
+
+VAR
+    i,j,k : INTEGER;
+
+BEGIN
+    FOR i FROM 1 TO arr.length-1 DO
+        k := arr [i];
+        j := i-1;
+        WHILE (j >= 0 AND arr[j] > k) DO
+            arr[j+1] := arr[j];
+            j := j-1;
+        END_WHILE
+        arr[j+1] = k;
+    END_FOR
+END
